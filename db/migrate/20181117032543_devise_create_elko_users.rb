@@ -2,7 +2,7 @@
 
 class DeviseCreateElkoUsers < ActiveRecord::Migration[5.2]
   def change
-    create_table :users do |t|
+    create_table :elko_users do |t|
       ## Database authenticatable
       t.string :first_name
       t.string :last_name
@@ -23,6 +23,15 @@ class DeviseCreateElkoUsers < ActiveRecord::Migration[5.2]
       t.inet     :current_sign_in_ip
       t.inet     :last_sign_in_ip
 
+      ## Invitable
+      t.string   :invitation_token
+      t.datetime :invitation_created_at
+      t.datetime :invitation_sent_at
+      t.datetime :invitation_accepted_at
+      t.integer  :invitation_limit
+      t.integer  :invited_by_id
+      t.string   :invited_by_type      
+
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at
@@ -38,10 +47,11 @@ class DeviseCreateElkoUsers < ActiveRecord::Migration[5.2]
       t.timestamps null: false
     end
 
-    Elko::User.create first_name: 'Angel', last_name: 'Garcia', email: 'angarc37@gmail.com', password: 'wa#$OQWNsI6n^*Y%RazaxWclx@Ou^i', password_confirmation: 'wa#$OQWNsI6n^*Y%RazaxWclx@Ou^i'
-    add_index :users, :email,                unique: true
-    add_index :users, :reset_password_token, unique: true
-    # add_index :users, :confirmation_token,   unique: true
-    # add_index :users, :unlock_token,         unique: true
+    ElkoUser.create first_name: 'Angel', last_name: 'Garcia', email: 'angarc37@gmail.com', password: 'wa#$OQWNsI6n^*Y%RazaxWclx@Ou^i', password_confirmation: 'wa#$OQWNsI6n^*Y%RazaxWclx@Ou^i'
+    add_index :elko_users, :email,                unique: true
+    add_index :elko_users, :reset_password_token, unique: true
+    add_index :elko_users, :invitation_token, :unique => true
+    # add_index :elko_users, :confirmation_token,   unique: true
+    # add_index :elko_users, :unlock_token,         unique: true
   end
 end
