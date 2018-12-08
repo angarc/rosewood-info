@@ -1,0 +1,22 @@
+<h2>Enter the name of your survey</h2>
+
+<%= simple_form_for @survey, url: dashboard_surveys_path do |f| %>
+
+	<div class='form-group'>
+		<%= f.input :title, input_html: { class: 'form-control' } %>
+	</div>
+
+	<div class='form-group'>
+		<%= f.input :description, input_html: { class: 'form-control' } %>
+	</div>
+
+	<div class='form-group'>
+		<%= f.input :access_code, 
+			placeholder: 'This is the code surveyees will enter to access your survey',
+			input_html: { class: 'form-control' } 
+		%>
+	</div>
+
+		<%= f.submit class: 'btn btn-md btn-primary' %>
+
+<% end %>
