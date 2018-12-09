@@ -21,5 +21,9 @@ test:
   database: db/rosewood_info_test
 
 production:
-  <<: *default
-  database: db/rosewood_info_production
+  adapter: postgresql
+  database: rosewood_info_production
+  pool: 5
+  host: ''
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
