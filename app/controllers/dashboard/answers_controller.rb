@@ -1,4 +1,8 @@
-class Dashboard::AnswersController < ApplicationController
+class Dashboard::AnswersController < DashboardController
+
+  def index
+
+  end
 
   def destroy
     @survey = current_user.surveys.find(params[:survey_id])
