@@ -12,4 +12,8 @@ class Answer < ApplicationRecord
     "#{title}"
   end
 
+  def get_percentage_chosen(question)
+    self.number_of_times_chosen.to_f / question.total_answers_chosen.to_f
+  end
+
 end

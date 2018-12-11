@@ -3,7 +3,7 @@ class Survey < ApplicationRecord
   ADDABLE     = false
   EDITABLE    = true
   VIEWABLE    = true
-  PUBLISHABLE = false
+  PUBLISHABLE = true
   DELETEABLE  = true
 
   belongs_to :user
@@ -17,6 +17,14 @@ class Survey < ApplicationRecord
 
   def label
     "#{self.title}"
+  end
+
+  def toggle_status
+    if self.published?
+      self.unpublished!
+    else
+      self.published!
+    end
   end
 
 end

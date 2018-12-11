@@ -1,6 +1,12 @@
 @import 'font-awesome';
 @import 'bootstrap';
 
+.vertical-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .navbar-custom {
   background-color: #227aff;
 }

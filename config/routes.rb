@@ -10,10 +10,21 @@ Rails.application.routes.draw do
   	}
   }
 
+  resources :surveys do
+    collection do
+      get :search
+    end
+  end
+
   get '/dashboard', to: 'dashboard#index'
   namespace :dashboard do
     resources :surveys do
-      resources :questions
+      resources :questions do
+        resources :answers
+      end
+      member do
+        post :publish
+      end
     end
   end
 

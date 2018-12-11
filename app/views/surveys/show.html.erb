@@ -1,0 +1,18 @@
+<h2><%= @survey.title %></h2>
+
+<form>
+
+  <input type="hidden" name="processable" value='true'>
+
+  <% @survey.questions.each do |question| %>
+    <strong><%= question.title %></strong>
+    <ol>
+      <% question.answers.each do |answer| %>
+        <li><input type='radio' value='<%= answer.title %>' name="<%= question.title %>"><%= answer.title %></li>
+      <% end %>
+    </ol>
+    <br>
+  <% end %>
+
+  <input type='submit'>
+</form>

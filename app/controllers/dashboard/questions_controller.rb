@@ -27,7 +27,6 @@ class Dashboard::QuestionsController < DashboardController
   end
 
   def update
-    byebug
     @survey = current_user.surveys.find(params[:survey_id])
     @question = @survey.questions.find(params[:id])
 

@@ -14,4 +14,12 @@ class Question < ApplicationRecord
     "#{title}"
   end
 
+  def total_answers_chosen
+    total = 0
+    self.answers.each do |answer|
+      total = total + answer.number_of_times_chosen
+    end
+    total
+  end
+
 end

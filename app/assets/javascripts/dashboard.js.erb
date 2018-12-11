@@ -13,12 +13,14 @@
 //= require rails-ujs
 //= require activestorage
 //= require jquery
+//= require cocoon
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
 
+
+$(document).on('turbolinks:load', function() {
   $('form').on('click', '.remove_record', function(event) {
     $(this).prev('input[type=hidden]').val('1');
     $(this).closest('tr').remove();

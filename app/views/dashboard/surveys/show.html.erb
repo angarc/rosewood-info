@@ -1,20 +1,53 @@
 <h2 class='mt-3 float-left'><%= @survey.title.titleize %></h2>
 <div class='float-right mt-3'>
-  <%= link_to fa_icon('upload', text: 'Publish'), '', class: 'btn btn-primary btn-md' %>
-  <%= link_to fa_icon('plus', text: 'Add Questions'), new_dashboard_survey_question_path(@survey), class: 'btn btn-primary btn-md' %>
+  <% if @survey.published? %>
+    <%= link_to fa_icon('upload', text: 'Unpublish'), publish_dashboard_survey_path(@survey), method: :post, class: 'btn btn-primary btn-md' %>
+  <% else %>
+    <%= link_to fa_icon('upload', text: 'Publish'), publish_dashboard_survey_path(@survey), method: :post, class: 'btn btn-primary btn-md' %>
+  <% end  %>
+  <%= link_to fa_icon('plus', text: 'Add A Question'), new_dashboard_survey_question_path(@survey), class: 'btn btn-primary btn-md' %>
 </div>
 
 <hr class='fix-float'>
 
 <% @questions.each do |question| %>
 
-  <%= link_to 'Delete', dashboard_survey_question_path(@survey, question), method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%= link_to 'Edit', edit_dashboard_survey_question_path(@survey, question) %>
-  <%= question.title %>
-  <ul>
-  <% question.answers.each do |answer| %>
-    <li><%= answer.title %><br></li>
-  <% end %>
-  </ul>
+  <% if question.total_answers_chosen > 0 %>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong><%= question.title %></strong>
+        <div class="float-right">
+          <%= link_to 'Delete', dashboard_survey_question_path(@survey, question), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Edit', edit_dashboard_survey_question_path(@survey, question) %>
+        </div>
+      </li>
+    </ul>
+    <div class="row">
+      <% @data_array = Array.new %>
+      <div class="col-md-6 vertical-align">
+        <div class="card text-center">
+          <ul class="list-group list-group-flush">
+            <% question.answers.each do |answer| %>
+              <div class="list-group-item">
+                <div class="float-left">
+                  <strong><%= answer.title%></strong> | chosen: <%= answer.number_of_times_chosen %> time(s) | <%= (answer.get_percentage_chosen(question) * 100).to_i %>%
+                </div>
+                <div class="float-right">
+                  <%= link_to 'Delete', dashboard_survey_question_answer_path(@survey, question, answer), method: :delete, data: { confirm: "Are you sure?" } %>
+                </div>
+              </div>
+              <% @data_array << [answer.title, (answer.get_percentage_chosen(question)) ] %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
 
+      <div class="col-md-6">
+        <%= pie_chart @data_array %><br>
+      </div>
+    </div>
+  <% else %>
+    <%= question.title %> | Nothing yet!
+    <br>
+  <% end %>
 <% end %>

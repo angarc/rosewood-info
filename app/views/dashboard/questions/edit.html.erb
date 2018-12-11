@@ -1,7 +1,8 @@
 <h2 class='mt-3'><%= @survey.title.titleize %></h2>
 <hr>
 
-<h3>Add A Question</h3>
+<h3>Edit A Question</h3>
+<small>You can delete answer choices on the survey page.</small>
 
 <%= simple_form_for @question, url: dashboard_survey_question_path(@survey, @question) do |f| %>
   

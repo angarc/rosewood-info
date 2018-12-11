@@ -1,1 +1,7 @@
-Rosewood Info
+<%= simple_form_for @survey_query, method: :get, url: search_surveys_path do |f| %>
+
+  <%= f.input :query, label: false, placeholder: 'Enter a survey code here ...'%>
+
+  <%= f.submit 'Enter', class: 'btn btn-primary' %>
+
+<% end %>

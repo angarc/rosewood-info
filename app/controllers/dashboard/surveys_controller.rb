@@ -25,6 +25,25 @@ class Dashboard::SurveysController < DashboardController
 		@questions = @survey.questions
 	end
 
+	def destroy
+		@survey = current_user.surveys.find(params[:id])
+
+		if @survey.destroy
+			flash[:success] = "We successfully deleted your survey!"
+			redirect_back fallback_location: dashboard_surveys_path
+		else
+			flash[:danger] = @survey.errors.full_messages.to_sentence
+			redirect_back fallback_location: dashboard_surveys_path
+		end
+	end
+
+  def publish
+		@survey = current_user.surveys.find(params[:id])
+		@survey.toggle_status
+		flash[:success] = 'Successfully published your survey!'
+		redirect_back fallback_location: @survey
+	end
+
 	private 
 
 	def survey_params
