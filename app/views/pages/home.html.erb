@@ -1,7 +1,122 @@
-<%= simple_form_for @survey_query, method: :get, url: search_surveys_path do |f| %>
 
-  <%= f.input :query, label: false, placeholder: 'Enter a survey code here ...'%>
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo"><strong>Rosewood Info</strong> by Angel Garcia</a>
+<!--        <ul class="icons">-->
+<!--          <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>-->
+<!--          <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>-->
+<!--          <li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>-->
+<!--          <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>-->
+<!--          <li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>-->
+<!--        </ul>-->
+      </header>
 
-  <%= f.submit 'Enter', class: 'btn btn-primary' %>
+      <!-- Banner -->
+      <section id="banner">
+        <div class="content">
+          <header>
+            <h1>Welcome to <br/> Rosewood Info</h1>
+            <p>A free online questionnaire platform.</p>
+          </header>
+          <p>Rosewood Info is a free tool that can be used to gather statistics and user provided information. It is a simple platform that will allow you to create polls, petitions, and surveys, all with just a few clicks. Sign up and get started today!</p>
+          <ul class="actions">
+            <li><%= link_to 'Register', new_user_registration_path, class: 'button big' %></li>
+          </ul>
+        </div>
+        <span class="image object">
+										<img src="images/pic10.jpg" alt="" />
+									</span>
+      </section>
 
-<% end %>
+      <!-- Section -->
+      <section id='about'>
+        <header class="major">
+          <h2>Why Rosewood?</h2>
+        </header>
+        <div class="features">
+          <article>
+            <span class="icon fa-diamond"></span>
+            <div class="content">
+              <h3>Portitor ullamcorper</h3>
+              <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="code">
+        <header class="major">
+          <h2>Enter a code here to take participate in a questionnaire</h2>
+        </header>
+        <div class="posts">
+          <article>
+            <%= simple_form_for @survey_query, method: :get, url: search_surveys_path do |f| %>
+              <%= f.input :query, label: false, placeholder: 'Enter access code here' %>
+
+              <br>
+
+              <%= f.submit 'Enter' %>
+            <% end %>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section -->
+      <section>
+        <header class="major">
+          <h2>Ipsum sed dolor</h2>
+        </header>
+        <div class="posts">
+          <article>
+            <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+            <h3>Interdum aenean</h3>
+            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+            <ul class="actions">
+              <li><a href="#" class="button">More</a></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <div class="inner">
+
+      <!-- Search -->
+      <section id="search" class="alt">
+        <%= simple_form_for @survey_query, method: :get, url: search_surveys_path do |f| %>
+          <%= f.input :query, label: false, placeholder: 'Enter access code here' %>
+        <% end %>
+      </section>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <header class="major">
+          <h2>Menu</h2>
+        </header>
+        <ul>
+          <li><a href="#">Homepage</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#code">Enter a Code</a></li>
+        </ul>
+      </nav>
+
+      <!-- Section -->
+      <section>
+        <header class="major">
+          <h2>Like this website?</h2>
+        </header>
+        <p>Hello! If you like this website and you were thinking of getting your own website, please contact me on my website at the link below.</p>
+        <ul class="contact">
+          <li class="fa-envelope-o"><a href="https://www.agarciadev.com">www.agarciadev.com</a></li>
+        </ul>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <p>Created and Powered by <strong>Angel Garcia</strong></p>
+        <p class="copyright">&copy; Rosewood Info. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+      </footer>

@@ -6,13 +6,17 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
 
-  <body>
-    <div class='container'>
-      <%= yield %>
+  <body class="is-preload">
+    <div id="wrapper">
+      <div id="main">
+        <div class="inner">
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>

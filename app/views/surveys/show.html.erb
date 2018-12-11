@@ -8,7 +8,10 @@
     <strong><%= question.title %></strong>
     <ol>
       <% question.answers.each do |answer| %>
-        <li><input type='radio' value='<%= answer.title %>' name="<%= question.title %>"><%= answer.title %></li>
+        <li>
+          <input type='radio' id='<%= answer.id %>' value='<%= answer.title %>' name="<%= question.title %>">
+          <label for="<%= answer.id %>"><%= answer.title %></label>
+        </li>
       <% end %>
     </ol>
     <br>
