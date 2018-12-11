@@ -1,7 +1,7 @@
 
       <!-- Header -->
       <header id="header">
-        <a href="index.html" class="logo"><strong>Rosewood Info</strong> by Angel Garcia</a>
+        <a class="logo"><strong>Rosewood Info</strong> by Angel Garcia</a>
 <!--        <ul class="icons">-->
 <!--          <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>-->
 <!--          <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>-->
@@ -24,8 +24,8 @@
           </ul>
         </div>
         <span class="image object">
-										<img src="images/pic10.jpg" alt="" />
-									</span>
+          <img src="https://images.unsplash.com/photo-1527153818091-1a9638521e2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb" alt="here-image" />
+        </span>
       </section>
 
       <!-- Section -->
@@ -34,13 +34,15 @@
           <h2>Why Rosewood?</h2>
         </header>
         <div class="features">
-          <article>
-            <span class="icon fa-diamond"></span>
-            <div class="content">
-              <h3>Portitor ullamcorper</h3>
-              <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-            </div>
-          </article>
+          <% @features.each do |feature| %>
+            <article>
+              <span class="icon fa-<%= feature.icon %>"></span>
+              <div class="content">
+                <h3><%= feature.name %></h3>
+                <p><%= feature.description %></p>
+              </div>
+            </article>
+          <% end %>
         </div>
       </section>
 
@@ -57,23 +59,6 @@
 
               <%= f.submit 'Enter' %>
             <% end %>
-          </article>
-        </div>
-      </section>
-
-      <!-- Section -->
-      <section>
-        <header class="major">
-          <h2>Ipsum sed dolor</h2>
-        </header>
-        <div class="posts">
-          <article>
-            <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-            <h3>Interdum aenean</h3>
-            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-            <ul class="actions">
-              <li><a href="#" class="button">More</a></li>
-            </ul>
           </article>
         </div>
       </section>
@@ -101,6 +86,8 @@
           <li><a href="#">Homepage</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#code">Enter a Code</a></li>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+          <li><%= link_to 'Register', new_user_registration_path %></li>
         </ul>
       </nav>
 
@@ -120,3 +107,5 @@
         <p>Created and Powered by <strong>Angel Garcia</strong></p>
         <p class="copyright">&copy; Rosewood Info. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
       </footer>
+    </div>
+  </div>
