@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a8a1835-6b72-425d-8c2f-495fe4d2854a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/surveys_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/surveys/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rosewood-info.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rosewood-info.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/dashboard.js.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/dashboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/dashboard/questions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dashboard/questions_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/dashboard/surveys_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/dashboard/surveys_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pages_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/answer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/answer.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/question.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/question.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/survey.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/survey.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dashboard/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dashboard/questions/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard/questions/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/dashboard/surveys/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard/surveys/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/dashboard/surveys/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard/surveys/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/assets.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20181208172750_create_answers.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20181208172750_create_answers.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -49,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/dashboard/surveys/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+            <state relative-caret-position="483">
+              <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="52" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -146,6 +122,9 @@
       <find>byebug</find>
       <find>SearchQuery</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -375,12 +354,12 @@
       <updated>1544299829899</updated>
       <workItem from="1544299842254" duration="1097000" />
       <workItem from="1544375161756" duration="2188000" />
-      <workItem from="1544449490494" duration="11377000" />
+      <workItem from="1544449490494" duration="11594000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14662000" />
+    <option name="totallyTimeSpent" value="14879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -632,8 +611,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dashboard/surveys/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+        <state relative-caret-position="483">
+          <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="52" selection-end-column="12" />
         </state>
       </provider>
     </entry>

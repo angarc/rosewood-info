@@ -47,7 +47,15 @@
       </div>
     </div>
   <% else %>
-    <%= question.title %> | Nothing yet!
-    <br>
+    <div>
+      <%= question.title %> | <strong>No one has submitted any answers for this question!</strong>
+      <%= link_to 'Delete', dashboard_survey_question_path(@survey, question), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Edit', edit_dashboard_survey_question_path(@survey, question) %>
+    </div>
+    <ul>
+      <% question.answers.each do |answer| %>
+        <li><%= answer.title %> | <%= link_to "Delete", dashboard_survey_question_answer_path(@survey, question, answer), method: :delete, data: { confirmation: "Are you sure?" } %></li>
+      <% end  %>
+    </ul>
   <% end %>
 <% end %>
