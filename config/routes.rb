@@ -29,6 +29,12 @@ Rails.application.routes.draw do
   end
 
   namespace :elko do
+  	resources :features do
+      collection do
+        post :toggle_status
+      end
+    end
+
   	resources :answers do
       collection do
         post :toggle_status
