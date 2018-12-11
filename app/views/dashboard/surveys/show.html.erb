@@ -6,6 +6,12 @@
     <%= link_to fa_icon('upload', text: 'Publish'), publish_dashboard_survey_path(@survey), method: :post, class: 'btn btn-primary btn-md' %>
   <% end  %>
   <%= link_to fa_icon('plus', text: 'Add A Question'), new_dashboard_survey_question_path(@survey), class: 'btn btn-primary btn-md' %>
+
+  <% if @survey.authorized_survey_list.present? %>
+
+  <% else %>
+    <%= link_to fa_icon('plus', text: 'Add a Surveyee List'), '', class: 'btn btn-primary btn-md' %>
+  <% end  %>
 </div>
 
 <hr class='fix-float'>

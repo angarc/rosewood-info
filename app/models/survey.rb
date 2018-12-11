@@ -7,7 +7,8 @@ class Survey < ApplicationRecord
   DELETEABLE  = true
 
   belongs_to :user
-  has_many :questions, dependent: :destroy
+  has_many   :questions, dependent: :destroy
+  has_one    :authorized_surveyees_list
 
   enum status: [:unpublished, :published]
   enum state: [:closed, :opened]
