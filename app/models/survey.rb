@@ -20,6 +20,10 @@ class Survey < ApplicationRecord
     "#{self.title}"
   end
 
+  def authorized?
+    self.authorized_surveyees_list.present?
+  end
+
   def toggle_status
     if self.published?
       self.unpublished!

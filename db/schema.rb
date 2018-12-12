@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_131522) do
+ActiveRecord::Schema.define(version: 2018_12_12_133311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,11 +24,19 @@ ActiveRecord::Schema.define(version: 2018_12_11_131522) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
+  create_table "authorized_entries", force: :cascade do |t|
+    t.string "identification"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "authorized_surveyees_lists", force: :cascade do |t|
     t.string "identification_type"
     t.text "list"
+    t.bigint "survey_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["survey_id"], name: "index_authorized_surveyees_lists_on_survey_id"
   end
 
   create_table "blocks", force: :cascade do |t|

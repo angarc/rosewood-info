@@ -7,14 +7,19 @@
   <% end  %>
   <%= link_to fa_icon('plus', text: 'Add A Question'), new_dashboard_survey_question_path(@survey), class: 'btn btn-primary btn-md' %>
 
-  <% if @survey.authorized_survey_list.present? %>
-
+  <% if @survey.authorized_surveyees_list.present? %>
+    <%= link_to fa_icon('eye', text: 'View Surveyee List'), dashboard_survey_authorized_surveyees_list_path(@survey, @survey.authorized_surveyees_list), class: 'btn btn-primary btn-md' %>
   <% else %>
-    <%= link_to fa_icon('plus', text: 'Add a Surveyee List'), '', class: 'btn btn-primary btn-md' %>
+    <%= link_to fa_icon('plus', text: 'Add a Surveyee List'), new_dashboard_survey_authorized_surveyees_list_path(@survey), class: 'btn btn-primary btn-md' %>
   <% end  %>
 </div>
 
 <hr class='fix-float'>
+
+<% if !@survey.published? %>
+  <strong>***Note that you have not published your survey. Users will not be able to access it unless it is published</strong>
+<% end %>
+<p>This is your survey code: <strong><%= @survey.access_code %></strong></p>
 
 <% @questions.each do |question| %>
 

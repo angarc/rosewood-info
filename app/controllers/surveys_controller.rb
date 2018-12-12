@@ -1,7 +1,14 @@
 class SurveysController < ApplicationController
 
   def show
-    @survey = Survey.find(params[:id]);
+    @survey = Survey.find(params[:id])
+
+    if @survey.authorized?
+      if (!params[:identification].present?) || (!@survey.authorized_surveyees_list.includes?(params[:identification]))
+        redirect_to authorize_survey_path(@survey)
+        return
+      end
+    end
 
     if params[:processable].present? && params[:processable] == "true"
       params.keys.each do |key|
@@ -14,6 +21,13 @@ class SurveysController < ApplicationController
           end
         end
       end
+
+      if @survey.authorized?
+        @new_array_list = @survey.authorized_surveyees_list.list.split(" ").delete_if { |a| a == params[:identification]}
+        @survey.authorized_surveyees_list.list = @new_array_list.join(" ")
+        @survey.authorized_surveyees_list.save
+      end
+
       redirect_to root_path
     end
   end
@@ -30,7 +44,26 @@ class SurveysController < ApplicationController
     end
   end
 
+  def authorize
+    @survey = Survey.find(params[:id])
+    @authorized_entry = AuthorizedEntry.new
+  end
+
+  def process_authorization
+    @survey = Survey.find(params[:id])
+    @authorized_entry = AuthorizedEntry.new authorized_entry_params
+
+    if @survey.authorized_surveyees_list.includes?(@authorized_entry.identification)
+      redirect_to survey_path(@survey, identification: @authorized_entry.identification)
+    else
+      redirect_to root_path
+    end
+  end
+
   private
+  def authorized_entry_params
+    params.require(:authorized_entry).permit(:identification)
+  end
 
   def survey_query_params
     params.require(:survey_query).permit(:query)

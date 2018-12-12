@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   }
 
   resources :surveys do
+    member do
+      get :authorize
+      get :process_authorization
+    end
     collection do
       get :search
     end
@@ -19,6 +23,9 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#index'
   namespace :dashboard do
     resources :surveys do
+      resources :authorized_surveyees_lists do
+
+      end
       resources :questions do
         resources :answers
       end

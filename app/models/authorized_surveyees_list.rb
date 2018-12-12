@@ -7,6 +7,7 @@ class AuthorizedSurveyeesList < ApplicationRecord
   DELETEABLE  = true
 
   enum status: [:unpublished, :published]
+  belongs_to :survey, optional: true
 
   def toggle_status
     if self.published?
@@ -14,6 +15,10 @@ class AuthorizedSurveyeesList < ApplicationRecord
     else
       self.published!
     end
+  end
+
+  def includes?(user)
+    self.list.split(" ").include?(user)
   end
 
   def label

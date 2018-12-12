@@ -3,6 +3,7 @@ class CreateAuthorizedSurveyeesLists < ActiveRecord::Migration[5.2]
     create_table :authorized_surveyees_lists do |t|
       t.string :identification_type
       t.text   :list
+      t.references :survey, index: true
       t.timestamps
     end
   end

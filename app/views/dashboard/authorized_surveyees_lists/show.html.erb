@@ -1,0 +1,19 @@
+<h2 class="float-left">Authorized Surveyees List</h2>
+
+<div class="float-right mt-1">
+  <%= link_to fa_icon('edit', text: 'Edit'), edit_dashboard_survey_authorized_surveyees_list_path(@survey, @survey.authorized_surveyees_list), class: 'btn btn-primary' %>
+  <%= link_to fa_icon('trash', text: 'Delete'), dashboard_survey_authorized_surveyees_list_path(@survey, @survey.authorized_surveyees_list), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary' %>
+</div>
+
+<hr class="fix-float">
+
+<p>You've chosen surveyees to enter their <%= @surveyee_list.identification_type.pluralize.downcase! %> to identify themselves.</p>
+
+
+<p>Here are all the <%= @surveyee_list.identification_type.pluralize.downcase! %> still present.</p>
+
+<ul>
+  <% @surveyee_list.list.split(" ").each do |surveyee| %>
+    <li><%= surveyee %></li>
+  <% end %>
+</ul>

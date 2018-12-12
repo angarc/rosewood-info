@@ -4,6 +4,10 @@
 
   <input type="hidden" name="processable" value='true'>
 
+  <% if @survey.authorized? %>
+    <input type="hidden" name="identification" value="<%= params[:identification] %>"/>
+  <% end %>
+
   <% @survey.questions.each do |question| %>
     <strong><%= question.title %></strong>
     <ol>

@@ -1,0 +1,13 @@
+<h2>Add an Authorized Surveyee List</h2>
+
+<hr>
+
+<%= simple_form_for @authorized_surveyee_list, url: dashboard_survey_authorized_surveyees_lists_path(@survey) do |f| %>
+
+  <%= f.input :identification_type, placeholder: 'How will users identify themsevles? i.e., names, emails, ID\'s, codes, etc.' %>
+
+  <%= f.input :list, placeholder: 'Who is authorized to take this survey? I.e., bill frank will jan lynn', input_html: { rows: 15 } %>
+
+  <%= f.submit class: 'btn btn-primary' %>
+
+<% end %>

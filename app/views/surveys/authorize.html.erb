@@ -1,0 +1,7 @@
+<%= simple_form_for @authorized_entry, method: :get, url: process_authorization_survey_path(@survey) do |f| %>
+
+  <%= f.input :identification, placeholder: "Please enter your #{@survey.authorized_surveyees_list.identification_type.singularize}" %>
+
+  <%= f.submit "Submit" %>
+
+<% end %>
