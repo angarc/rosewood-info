@@ -25,12 +25,12 @@ class Dashboard::AuthorizedSurveyeesListsController < DashboardController
   end
 
   def edit
-    @survey = Survey.find(params[:id])
+    @survey = Survey.find(params[:survey_id])
     @authorized_surveyee_list = @survey.authorized_surveyees_list
   end
 
   def update
-    @survey = Survey.find(params[:id])
+    @survey = Survey.find(params[:survey_id])
     @authorized_surveyee_list = @survey.authorized_surveyees_list
 
     if @authorized_surveyee_list.update authorized_surveyees_list_params

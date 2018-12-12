@@ -7,10 +7,10 @@
 
 <hr class="fix-float">
 
-<p>You've chosen surveyees to enter their <%= @surveyee_list.identification_type.pluralize.downcase! %> to identify themselves.</p>
+<p>You've chosen surveyees to enter their <%= @surveyee_list.identification_type.pluralize %> to identify themselves.</p>
 
 
-<p>Here are all the <%= @surveyee_list.identification_type.pluralize.downcase! %> still present.</p>
+<p>Here are all the <%= @surveyee_list.identification_type.pluralize %> still present.</p>
 
 <ul>
   <% @surveyee_list.list.split(" ").each do |surveyee| %>
