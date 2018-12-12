@@ -12,7 +12,7 @@ class Dashboard::SurveysController < DashboardController
 		@survey = Survey.new survey_params
 		current_user.surveys << @survey
 		if @survey.save
-			flash[:success] = "You successfully created a new.html.erb Survey!"
+			flash[:success] = "You successfully created a new Survey!"
 			redirect_to dashboard_surveys_path
 		else
 			flash[:danger] = @survey.errors.full_messages.to_sentence

@@ -1,5 +1,7 @@
 <h2><%= @survey.title %></h2>
 
+<p><%= @survey.description if @survey.description.present? %></p>
+
 <form>
 
   <input type="hidden" name="processable" value='true'>
